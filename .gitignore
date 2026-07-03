@@ -1,0 +1,26 @@
+# Secrets & local env
+.env
+homeassistant/secrets.yaml
+
+# Home Assistant runtime state
+homeassistant/.storage/
+homeassistant/.cloud/
+homeassistant/*.db
+homeassistant/*.db-*
+homeassistant/*.log
+homeassistant/tts/
+homeassistant/deps/
+homeassistant/home-assistant.log*
+homeassistant/.HA_VERSION
+homeassistant/.uuid
+
+# Wyoming satellite checkout / venv (installed on the device)
+wyoming-satellite/wyoming-satellite/
+wyoming-satellite/.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

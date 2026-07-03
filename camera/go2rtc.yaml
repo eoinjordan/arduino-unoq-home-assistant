@@ -1,0 +1,18 @@
+# go2rtc — turns a USB webcam (/dev/video0) into an RTSP/WebRTC stream that
+# Home Assistant can consume. Started via the `camera` compose profile:
+#   docker compose --profile camera up -d
+#
+# Adjust input_format / video_size to match your webcam (v4l2-ctl --list-formats-ext).
+
+streams:
+  usb_camera:
+    - "ffmpeg:device?video=/dev/video0&input_format=mjpeg&video_size=1280x720#video=h264#hardware"
+
+api:
+  listen: ":1984"
+
+rtsp:
+  listen: ":8554"
+
+webrtc:
+  listen: ":8555"
